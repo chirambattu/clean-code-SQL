@@ -15,7 +15,7 @@
 you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
 
 Software engineering principles, from Robert C. Martin's book
-[_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
+[_Clean Code_](https://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?adgrpid=55974923914&gclid=Cj0KCQjw_r3nBRDxARIsAJljleGT9BCkNKPgIoGAb_FeO8qQhDgrz3hCsMWDxqGwiDIRYAE7fJxmc7MaAkUCEALw_wcB&hvadid=259111288054&hvdev=c&hvlocphy=9044965&hvnetw=g&hvpos=1t2&hvqmt=e&hvrand=11926822464135628181&hvtargid=kwd-300722081224&hydadcr=17585_1775264&keywords=clean+code+handbook&qid=1559207523&s=gateway&sr=8-1),
 adapted for SQL. This is not a style guide. It's a guide to developing
 readable, reusable, and refactorable scripts in SQL.
 
@@ -34,6 +34,8 @@ mistakes. Every piece of script starts as a first draft, like wet clay getting
 shaped into its final form. Finally, we chisel away the imperfections when
 we review it with our peers. Don't beat yourself up for first drafts that need
 improvement. Beat up the code instead!
+
+Special thanks to [riptutorial](https://riptutorial.com/) and stackoverflow
 
 ### SQL keywords are not case sensitive. However, it is common practice to write them in upper case.
 
