@@ -4,6 +4,7 @@
 
 1. [Introduction](#introduction)
 2. [Table and Column Names](#table_and_column_names)
+3. [Indenting](#Indenting)
 
 
 ## Introduction
@@ -67,6 +68,78 @@ SELECT first_name, last_name
 FROM employees
 WHERE salary > 500;
 ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## **Indenting**
+
+There is no widely accepted standard. What everyone agrees on is that squeezing everything into a single line is bad.
+
+**Bad:**
+
+```SQL
+SELECT d.name, COUNT(*) AS employees FROM departments AS d JOIN employees AS e ON d.employeeid = e.departmentid WHERE d.name != 'HR' HAVING COUNT(*) > 10 ORDER BY COUNT(*) DESC;
+```
+
+At the minimum, put every clause into a new line, and split lines if they would become too long otherwise.
+
+**Good:**
+
+```SQL
+SELECT d.name,
+       COUNT(*) AS employees
+FROM departments AS d
+JOIN employees AS e ON d.id = e.departmentid
+WHERE d.name != 'HR'
+HAVING COUNT(*) > 10
+ORDER BY COUNT(*) DESC;
+```
+
+Sometimes, everything after the SQL keyword introducing a clause is indented to the same column.
+
+```SQL
+SELECT   d.name,
+         COUNT(*) AS employees
+FROM     departments AS d
+JOIN     employees AS e ON d.id = e.departmentid
+WHERE    d.name != 'HR'
+HAVING   COUNT(*) > 10
+ORDER BY COUNT(*) DESC;
+```
+
+(This can also be done while aligning the SQL keywords right.)
+
+Another common style is to put important keywords on their own lines.
+
+```SQL
+SELECT
+    d.name,
+    COUNT(*) AS employees
+FROM
+    departments AS d
+JOIN
+    employees AS e
+    ON d.id = e.departmentid
+WHERE
+    d.name != 'HR'
+HAVING
+    COUNT(*) > 10
+ORDER BY
+    COUNT(*) DESC;
+```
+
+Vertically aligning multiple similar expressions improves readability.
+
+```SQL
+SELECT model,
+       employeeid
+FROM cars
+WHERE customerid = 42
+  AND status     = 'READY';
+```
+### Using multiple lines makes it harder to embed SQL commands into other programming languages. However, many languages have a mechanism for multi-line strings, e.g., @"..." in C#, """...""" in Python, or R"(...)" in C++.
+
+
 
 **[⬆ back to top](#table-of-contents)**
 
