@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Table and Column Names](#table_and_column_names)
+2. [Table and Column Names](#table-and-column-names)
 3. [Indenting](#Indenting)
 4. [Joins](#Joins)
 5. [SELECT](#SELECT)
