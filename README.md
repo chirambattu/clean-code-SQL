@@ -3,17 +3,8 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Table and Column Names](#Table and Column Names)
-3. [Functions](#functions)
-4. [Objects and Data Structures](#objects-and-data-structures)
-5. [Classes](#classes)
-6. [SOLID](#solid)
-7. [Testing](#testing)
-8. [Concurrency](#concurrency)
-9. [Error Handling](#error-handling)
-10. [Formatting](#formatting)
-11. [Comments](#comments)
-12. [Translation](#translation)
+2. [Table and Column Names](#table_and_column_names)
+
 
 ## Introduction
 
