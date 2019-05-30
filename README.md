@@ -5,6 +5,7 @@
 1. [Introduction](#introduction)
 2. [Table and Column Names](#table_and_column_names)
 3. [Indenting](#Indenting)
+4. [Joins](#Joins)
 
 
 ## Introduction
@@ -139,6 +140,39 @@ WHERE customerid = 42
 ```
 ### Using multiple lines makes it harder to embed SQL commands into other programming languages. However, many languages have a mechanism for multi-line strings, e.g., @"..." in C#, """...""" in Python, or R"(...)" in C++.
 
+
+
+**[⬆ back to top](#table-of-contents)**
+
+## **Joins**
+
+Explicit joins should always be used; implicit joins have several problems.
+
+The join condition is somewhere in the WHERE clause, mixed up with any other filter conditions. This makes it harder to see which tables are joined, and how.
+
+Due to the above, there is a higher risk of mistakes, and it is more likely that they are found later.
+
+In standard SQL, explicit joins are the only way to use outer joins.
+
+```SQL
+SELECT d.name,
+       e.firstname || e.lastame AS employeename
+FROM      departments AS d
+LEFT JOIN employees   AS e ON d.id = e.departmentid;
+```
+
+Explicit joins allow using the USING clause.
+
+```SQL
+SELECT recipeid,
+       recipes.name,
+       COUNT(*) AS numberofingredients
+FROM      recipes
+LEFT JOIN ingredients USING (recipeid);
+```
+
+(This requires that both tables use the same column name.
+USING automatically removes the duplicate column from the result, e.g., the join in this query returns a single recipeid column.)
 
 
 **[⬆ back to top](#table-of-contents)**
