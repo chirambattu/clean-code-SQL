@@ -137,9 +137,9 @@ Vertically aligning multiple similar expressions improves readability.
 ```SQL
 SELECT model,
        employeeid
-FROM cars
-WHERE customerid = 42
-  AND status     = 'READY';
+FROM   cars
+WHERE  customerid = 42
+  AND  status     = 'READY';
 ```
 ### Using multiple lines makes it harder to embed SQL commands into other programming languages. However, many languages have a mechanism for multi-line strings, e.g., @"..." in C#, """...""" in Python, or R"(...)" in C++.
 
@@ -158,8 +158,8 @@ Due to the above, there is a higher risk of mistakes, and it is more likely that
 In standard SQL, explicit joins are the only way to use outer joins.
 
 ```SQL
-SELECT d.name,
-       e.firstname || e.lastame AS employeename
+SELECT    d.name,
+          e.firstname || e.lastame AS employeename
 FROM      departments AS d
 LEFT JOIN employees   AS e ON d.id = e.departmentid;
 ```
@@ -170,7 +170,7 @@ Explicit joins allow using the USING clause.
 SELECT recipeid,
        recipes.name,
        COUNT(*) AS numberofingredients
-FROM      recipes
+FROM   recipes
 LEFT JOIN ingredients USING (recipeid);
 ```
 
@@ -201,7 +201,7 @@ SELECT *
 
 ```SQL
   SELECT id, fullname, lastname, phonenumber
-  FROM emplopees;
+  FROM   emplopees;
 ```
 
 (When doing interactive queries, these considerations do not apply.)
@@ -214,7 +214,7 @@ SELECT id,
        name
 FROM departments
 WHERE NOT EXISTS (SELECT *
-                  FROM employees
+                  FROM  employees
                   WHERE departmentid = departments.id
                     AND hiredate >= '2015-01-01');
 ```
