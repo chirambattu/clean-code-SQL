@@ -6,6 +6,7 @@
 2. [Table and Column Names](#table_and_column_names)
 3. [Indenting](#Indenting)
 4. [Joins](#Joins)
+5. [SELECT](#SELECT)
 
 
 ## Introduction
@@ -176,4 +177,46 @@ USING automatically removes the duplicate column from the result, e.g., the join
 
 
 **[⬆ back to top](#table-of-contents)**
+
+## **Select**
+
+SELECT * returns all columns in the same order as they are defined in the table.
+
+When using SELECT *, the data returned by a query can change whenever the table definition changes. This increases the risk that different versions of your application or your database are incompatible with each other.
+
+Furthermore, reading more columns than necessary can increase the amount of disk and network I/O.
+
+So you should always explicitly specify the column(s) you actually want to retrieve.
+
+**Bad:**
+
+```SQL
+SELECT * 
+  FROM emplopees;
+```
+
+**Good:**
+
+```SQL
+  SELECT id, fullname, lastname, phonenumber
+  FROM emplopees;
+```
+
+(When doing interactive queries, these considerations do not apply.)
+
+However, SELECT * does not hurt in the subquery of an EXISTS operator, because EXISTS ignores the actual data anyway (it checks only if at least one row has been found). For the same reason, it is not meaningful to list any specific column(s) for EXISTS, so SELECT * actually makes more sense
+
+```SQL
+ -- list departments where nobody was hired recently
+SELECT id,
+       name
+FROM departments
+WHERE NOT EXISTS (SELECT *
+                  FROM employees
+                  WHERE departmentid = departments.id
+                    AND hiredate >= '2015-01-01');
+```
+
+**[⬆ back to top](#table-of-contents)**
+
 
