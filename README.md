@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Table/Column Names](#Table/Column Names)
+2. [Table and Column Names](#Table and Column Names)
 3. [Functions](#functions)
 4. [Objects and Data Structures](#objects-and-data-structures)
 5. [Classes](#classes)
@@ -43,7 +43,7 @@ improvement. Beat up the code instead!
 
 ### SQL keywords are not case sensitive. However, it is common practice to write them in upper case.
 
-## **Table/Column Names**
+## **Table and Column Names**
 
 ### Use meaningful and pronounceable Table/Column  names
 
