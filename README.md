@@ -43,7 +43,7 @@ Special thanks to [riptutorial](https://riptutorial.com/) and stackoverflow
 
 ### Use meaningful and pronounceable Table/Column  names
 
-Two common way of formatting table/column names are lower case.
+A common way of formatting table/column names is lower case.
 
 Names should describe what is stored in their object. This implies that column names usually should be singular. Whether table names should use singular or plural is a [heavily discussed](http://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plural-names) question, but in practice, it is more common to use plural table names.
 
