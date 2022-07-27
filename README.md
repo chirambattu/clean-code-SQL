@@ -194,14 +194,14 @@ So you should always explicitly specify the column(s) you actually want to retri
 
 ```SQL
 SELECT * 
-  FROM emplopees;
+  FROM employees;
 ```
 
 **Good:**
 
 ```SQL
   SELECT id, fullname, lastname, phonenumber
-  FROM   emplopees;
+  FROM   employees;
 ```
 
 (When doing interactive queries, these considerations do not apply.)
